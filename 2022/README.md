@@ -7,3 +7,9 @@ Commands to run to build and run each implementation.
   ```bash
   javac day1.java && java day1
   ```
+
+- Day 2
+
+  ```bash
+  node day2.js
+  ```
