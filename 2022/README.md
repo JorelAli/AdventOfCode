@@ -13,3 +13,9 @@ Commands to run to build and run each implementation.
   ```bash
   node day2.js
   ```
+
+- Day 3
+
+  ```bash
+  python3 day3.py
+  ```
