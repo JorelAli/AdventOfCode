@@ -8,12 +8,7 @@ bool encases(int start1, int end1, int start2, int end2) {
 }
 
 bool overlaps(int start1, int end1, int start2, int end2) {
-	for (int i = start1; i <= end1; i++) {
-		if (i >= start2 && i <= end2) {
-			return true;
-		}
-	}
-	return false;
+	return (/* max */ start1 <= start2 ? start2 : start1) <= (/* min */ end1 <= end2 ? end1 : end2);
 }
 
 int main() {
@@ -29,9 +24,12 @@ int main() {
 	fseek(file, 0, SEEK_END);
 	long fileLength = ftell(file);
 	fseek(file, 0, SEEK_SET);
-	fileContents = malloc(fileLength);
+	fileContents = malloc(fileLength + 1);
 	if (fileContents) {
 		fread(fileContents, sizeof(char), fileLength, file);
+
+		// Need to terminate this string for strtok(NULL, "\n") to be happy
+		fileContents[fileLength - 1] = '\0';
 	}
 	fclose(file);
 
@@ -45,7 +43,7 @@ int main() {
 		char* rest = line;
 
 		// Read elf 1
-		int elfOneStart = strtol(line, &rest, 10);
+		int elfOneStart = strtol(rest, &rest, 10);
 		int elfOneEnd = strtol(++rest, &rest, 10);
 
 		// Read elf 2
@@ -64,6 +62,8 @@ int main() {
 
 		line = strtok(NULL, "\n");
 	}
+
+	free(fileContents);
 
 	printf("Part 1: %d\n", numberOfFullyContainedAssignments);
 	printf("Part 2: %d\n", numberOfOverlappingAssignments);
