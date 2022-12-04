@@ -19,3 +19,9 @@ Commands to run to build and run each implementation.
   ```bash
   python3 day3.py
   ```
+
+- Day 4
+
+  ```bash
+  gcc day4.c -o day4 -std=c17 && ./day4
+  ```
