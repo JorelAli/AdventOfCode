@@ -12,7 +12,7 @@ bool overlaps(int start1, int end1, int start2, int end2) {
 }
 
 int main() {
-	FILE* file = fopen("day4_input_1.txt", "r");
+	FILE* file = fopen("day4_input.txt", "r");
 	if (NULL == file) {
 		printf("The input file day4_input_1.txt cannot be opened!\n");
 		exit(1);

@@ -25,3 +25,9 @@ Commands to run to build and run each implementation.
   ```bash
   gcc day4.c -o day4 -std=c17 && ./day4
   ```
+
+- Day 5
+
+  ```bash
+  gcc day5.cpp -o day5 -std=c++20 -lstdc++ && ./day5
+  ```
