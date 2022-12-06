@@ -31,3 +31,9 @@ Commands to run to build and run each implementation.
   ```bash
   gcc day5.cpp -o day5 -std=c++20 -lstdc++ && ./day5
   ```
+
+- Day 6
+
+  ```bash
+  tsc && node day6.js
+  ```
